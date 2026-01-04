@@ -59,7 +59,7 @@ public abstract class Animal {
 
     public void heal() {
         sickness = false;
-        System.out.println(toString() + ": Животное вылечино");
+        System.out.println(toString() + ": Животное вылечено");
     }
 
     @Override

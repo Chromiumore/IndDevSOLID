@@ -8,11 +8,21 @@ import me.chromiumore.employee.Feeder;
 import java.util.ArrayList;
 
 public class Enclosure {
-    private ArrayList<Animal> animals = new ArrayList<>();
+    private int id;
+    private ArrayList<Animal> animals;
     private Doctor doctor;
     private Feeder feeder;
     private Cleaner cleaner;
     private double purityLevel;
+
+    public Enclosure(int id, Doctor doctor, Feeder feeder, Cleaner cleaner) {
+        this.id = id;
+        this.doctor = doctor;
+        this.feeder = feeder;
+        this.cleaner = cleaner;
+        animals = new ArrayList<>();
+        purityLevel = 0.25;
+    }
 
     public void addAnimal(Animal animal) {
         animals.add(animal);

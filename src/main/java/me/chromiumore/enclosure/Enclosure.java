@@ -57,4 +57,16 @@ public class Enclosure {
 
         System.out.println("====== Окончание процедур ======\n");
     }
+
+    public ArrayList<Animal> getAnimals() {
+        return animals;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public double getPurityLevel() {
+        return purityLevel;
+    }
 }

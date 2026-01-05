@@ -18,6 +18,21 @@ public class Zoo {
         }
     }
 
+    public void displayStats() {
+        System.out.println("====== Статистика ======");
+
+        int totalAnimals = 0;
+        for (Enclosure e : enclosures) {
+            totalAnimals += e.getAnimals().size();
+            System.out.println("Чистота вольера номер " + e.getId() + ": " + e.getPurityLevel());
+            System.out.println("Животных в вольере номер " + e.getId() + ": " + e.getAnimals().size());
+        }
+
+        System.out.println("Животных в вольерах: " + totalAnimals);
+
+        System.out.println("========================\n");
+    }
+
     public ArrayList<Enclosure> getEnclosures() {
         return enclosures;
     }

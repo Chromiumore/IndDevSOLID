@@ -29,6 +29,8 @@ public class Main {
         Zoo zoo = new Zoo();
         zoo.getEnclosures().add(enclosure1);
         zoo.getEnclosures().add(enclosure2);
+        zoo.displayStats();
         zoo.start();
+        zoo.displayStats();
     }
 }

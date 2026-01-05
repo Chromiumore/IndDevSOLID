@@ -44,7 +44,7 @@ public class Enclosure {
     public void startProcedures() {
         increasePurity(0.65);
 
-        System.out.println("====== Начало процедур в вольере ======");
+        System.out.println("====== Начало процедур в вольере " + String.valueOf(id) + " ======");
 
         for (Animal a : animals) {
             if (a.checkRequiresCare()) {

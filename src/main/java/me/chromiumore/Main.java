@@ -14,9 +14,11 @@ public class Main {
 
         Snake snake = new Snake("Lola", 3, 4.2);
 
-        Enclosure enclosure1 = new Enclosure(1, v, k, cl);
+        Enclosure enclosure1 = new Enclosure(v, k, cl);
         enclosure1.addAnimal(snake);
 
-        enclosure1.startProcedures();
+        Zoo zoo = new Zoo();
+        zoo.getEnclosures().add(enclosure1);
+        zoo.start();
     }
 }

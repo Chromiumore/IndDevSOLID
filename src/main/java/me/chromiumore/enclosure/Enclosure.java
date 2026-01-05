@@ -8,6 +8,8 @@ import me.chromiumore.employee.Feeder;
 import java.util.ArrayList;
 
 public class Enclosure {
+    private static int nextId = 0;
+
     private int id;
     private ArrayList<Animal> animals;
     private Doctor doctor;
@@ -15,8 +17,9 @@ public class Enclosure {
     private Cleaner cleaner;
     private double purityLevel;
 
-    public Enclosure(int id, Doctor doctor, Feeder feeder, Cleaner cleaner) {
-        this.id = id;
+    public Enclosure(Doctor doctor, Feeder feeder, Cleaner cleaner) {
+        this.id = nextId;
+        nextId++;
         this.doctor = doctor;
         this.feeder = feeder;
         this.cleaner = cleaner;

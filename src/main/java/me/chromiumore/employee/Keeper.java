@@ -16,7 +16,7 @@ public class Keeper extends Employee implements Feeder, Cleaner {
 
     @Override
     public void feedAnimal(Animal animal) {
-        System.out.println(toString() + " кормит " + toString());
+        System.out.println(toString() + " кормит " + animal.toString());
         animal.eat();
     }
 

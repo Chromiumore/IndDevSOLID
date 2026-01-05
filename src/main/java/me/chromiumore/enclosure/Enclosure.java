@@ -55,6 +55,6 @@ public class Enclosure {
 
         cleaner.clean(this);
 
-        System.out.println("====== Окончание процедур ======");
+        System.out.println("====== Окончание процедур ======\n");
     }
 }

@@ -33,7 +33,7 @@ public abstract class Animal {
     protected abstract void behaveNormally();
 
     protected boolean isHungry() {
-        return Duration.between(LocalDateTime.now(), whenLastFed).toHours() >= 4;
+        return Duration.between(whenLastFed, LocalDateTime.now()).toHours() >= 4;
     }
 
     protected boolean isSick() {
@@ -54,7 +54,7 @@ public abstract class Animal {
         }
 
         if (!result) {
-            System.out.println(toString() + ": Животное нне нуждается в уходе");
+            System.out.println(toString() + ": Животное не нуждается в уходе");
             behaveNormally();
         }
 
@@ -62,13 +62,21 @@ public abstract class Animal {
     }
 
     public void eat() {
-        whenLastFed = LocalDateTime.now();
-        System.out.println(toString() + ": Животное покушало");
+        if (isHungry()) {
+            whenLastFed = LocalDateTime.now();
+            System.out.println(toString() + ": Животное покушало");
+        } else {
+            System.out.println(toString() + ": Животное не хочет есть");
+        }
     }
 
     public void heal() {
-        sickness = false;
-        System.out.println(toString() + ": Животное вылечено");
+        if (isSick()) {
+            sickness = false;
+            System.out.println(toString() + ": Животное вылечено");
+        } else {
+            System.out.println(toString() + ": Животное не нуждается в лечении");
+        }
     }
 
     @Override

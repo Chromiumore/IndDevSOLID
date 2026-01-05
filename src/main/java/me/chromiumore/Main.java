@@ -8,6 +8,8 @@ import me.chromiumore.employee.Keeper;
 import me.chromiumore.employee.Vet;
 import me.chromiumore.enclosure.Enclosure;
 
+import java.time.LocalDateTime;
+
 public class Main {
     public static void main(String[] args) {
         Keeper k = new Keeper("John", 27);
@@ -20,7 +22,7 @@ public class Main {
         enclosure1.addAnimal(snake);
 
         Enclosure enclosure2 = new Enclosure(v, k, k);
-        enclosure2.addAnimal(new Lion("Bob", 8, 70));
+        enclosure2.addAnimal(new Lion("Bob", 8, 70, LocalDateTime.of(2025, 1, 4, 0, 0, 0)));
         enclosure2.addAnimal(new Lion("Jora", 2, 43));
         enclosure2.addAnimal(new Parrot("Tolya", 1, 1.1));
 

@@ -1,5 +1,7 @@
 package me.chromiumore;
 
+import me.chromiumore.animal.Lion;
+import me.chromiumore.animal.Parrot;
 import me.chromiumore.animal.Snake;
 import me.chromiumore.employee.EnclosureCleaner;
 import me.chromiumore.employee.Keeper;
@@ -17,8 +19,14 @@ public class Main {
         Enclosure enclosure1 = new Enclosure(v, k, cl);
         enclosure1.addAnimal(snake);
 
+        Enclosure enclosure2 = new Enclosure(v, k, k);
+        enclosure2.addAnimal(new Lion("Bob", 8, 70));
+        enclosure2.addAnimal(new Lion("Jora", 2, 43));
+        enclosure2.addAnimal(new Parrot("Tolya", 1, 1.1));
+
         Zoo zoo = new Zoo();
         zoo.getEnclosures().add(enclosure1);
+        zoo.getEnclosures().add(enclosure2);
         zoo.start();
     }
 }

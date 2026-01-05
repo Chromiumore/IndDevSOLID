@@ -4,21 +4,30 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 
 public abstract class Animal {
+    private static int nextId = 0;
+
     private final String speciesName;
 
+    protected int id;
     protected String name;
     protected int age;
     protected double weight;
     protected boolean sickness;
     protected LocalDateTime whenLastFed;
 
-    protected Animal(String speciesName, String name, int age, double weight) {
+    public Animal(String speciesName, String name, int age, double weight, LocalDateTime whenLastFed) {
+        this.id = nextId;
+        nextId++;
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.sickness = false;
-        this.whenLastFed = LocalDateTime.now();
+        this.whenLastFed = whenLastFed;
         this.speciesName = speciesName;
+    }
+
+    public Animal(String speciesName, String name, int age, double weight) {
+        this(speciesName, name, age, weight, LocalDateTime.now());
     }
 
     protected abstract void behaveNormally();
